@@ -13,4 +13,27 @@ program
     expenseManager.addExpense(options.description, parseFloat(options.amount));
   });
 
+program
+  .command("list")
+  .description("list the expenses")
+  .action(() => {
+    expenseManager.listExpenses();
+  });
+
+program
+  .command("delete")
+  .description("delete an expense")
+  .requiredOption("--id <id>", "Expense id")
+  .action((options) => {
+    expenseManager.deleteExpense(options.id);
+  });
+
+program
+  .command("update")
+  .description("update an expense")
+  .requiredOption("--id <id>", "Expense id")
+  .requiredOption("--description <desc>", "Expense description")
+  .action((options) => {
+    expenseManager.updateExpense(options.id, options.description);
+  });
 program.parse(process.argv);

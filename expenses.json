@@ -1,14 +1,8 @@
 [
   {
-    "id": 1,
+    "id": 4,
     "date": "2025-10-18",
-    "description": "Groceries",
-    "amount": 54
-  },
-  {
-    "id": 2,
-    "date": "2025-10-18",
-    "description": "Groceries",
+    "description": "banku",
     "amount": 54
   }
 ]
