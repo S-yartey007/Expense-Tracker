@@ -58,9 +58,42 @@ function updateExpense(id, description) {
   listExpenses(readData);
 }
 
+function summaryExpense(month) {
+  const expenses = readData();
+  if (expenses.length === 0) {
+    console.log("no expenses");
+    return;
+  }
+
+  //Validate month
+  if (month) {
+    const monthNum = parseInt(month);
+    console.log(isNaN(parseInt(r)));
+    if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+      console.log("Error: Month must be a number between 1 and 12.");
+      return;
+    }
+    const monthlyExpenses = expenses.filter((e) => {
+      const month = new Date(e.date).getMonth() + 1;
+      return month === monthNum;
+    });
+    const monthlyExpense = monthlyExpenses.reduce((sum, e) => {
+      return sum + e.amount;
+    }, 0);
+    console.log(`Monthly expense for ${month}: ${monthlyExpense}`);
+    return;
+  }
+
+  //Total expenses if no month is passed
+  const totalExpense = expenses.reduce((sum, e) => {
+    return sum + e.amount;
+  }, 0);
+  console.log(`Total expenses: ${totalExpense}`);
+}
 module.exports = {
   addExpense,
   listExpenses,
   deleteExpense,
   updateExpense,
+  summaryExpense,
 };

@@ -4,5 +4,17 @@
     "date": "2025-10-18",
     "description": "banku",
     "amount": 54
+  },
+  {
+    "id": 5,
+    "date": "2025-10-18",
+    "description": "Groceries",
+    "amount": 54
+  },
+  {
+    "id": 6,
+    "date": "2025-10-18",
+    "description": "Groceries",
+    "amount": 54
   }
 ]

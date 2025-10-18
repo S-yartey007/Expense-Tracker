@@ -36,4 +36,13 @@ program
   .action((options) => {
     expenseManager.updateExpense(options.id, options.description);
   });
+
+program
+  .command("summary")
+  .description("give the total expense or monthly total expenses")
+  .option("--month <month>", "total expenses")
+  .action((options) => {
+    expenseManager.summaryExpense(options.month);
+  });
+
 program.parse(process.argv);
